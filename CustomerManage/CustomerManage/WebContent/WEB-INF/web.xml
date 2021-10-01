@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ServletCustomerInfoList</display-name>
+    <servlet-name>ServletCustomerInfoList</servlet-name>
+    <servlet-class>com.cusm.servlet.ServletCustomerInfoList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCustomerInfoList</servlet-name>
+    <url-pattern>/ServletCustomerInfoList</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ServletCustomerInfoPage</display-name>
+    <servlet-name>ServletCustomerInfoPage</servlet-name>
+    <servlet-class>com.cusm.servlet.ServletCustomerInfoPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCustomerInfoPage</servlet-name>
+    <url-pattern>/ServletCustomerInfoPage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ServletRegister</display-name>
+    <servlet-name>ServletRegister</servlet-name>
+    <servlet-class>com.cusm.servlet.ServletRegister</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletRegister</servlet-name>
+    <url-pattern>/ServletRegister</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ServletLogin</display-name>
+    <servlet-name>ServletLogin</servlet-name>
+    <servlet-class>com.cusm.servlet.ServletLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletLogin</servlet-name>
+    <url-pattern>/ServletLogin</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>ServletLogOut</display-name>
+    <servlet-name>ServletLogOut</servlet-name>
+    <servlet-class>com.cusm.servlet.ServletLogOut</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletLogOut</servlet-name>
+    <url-pattern>/ServletLogOut</url-pattern>
+  </servlet-mapping>
+  
+  <listener>
+    <listener-class>com.cusm.common.WebContextListener</listener-class>
+  </listener>
+  
+  <filter>
+  	<filter-name>permissionFiter</filter-name>
+  	<filter-class>com.cusm.common.FiterImpl</filter-class>
+  </filter>
+  
+  
+  <filter-mapping>
+    <filter-name>permissionFiter</filter-name>
+    <url-pattern>/ServletCustomerInfoPage</url-pattern>
+  </filter-mapping>
+  
+    <filter-mapping>
+    <filter-name>permissionFiter</filter-name>
+    <url-pattern>/customerinfo_list.html</url-pattern>
+  </filter-mapping>
+  
+</web-app>
